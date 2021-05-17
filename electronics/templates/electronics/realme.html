@@ -1,0 +1,93 @@
+{% extends "electronics/index.html" %}
+{% block content %}
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Electronics</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+ <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+       h2{
+  font-size: 25px;
+}
+h1 {
+  color: #106eea;
+  font-size: 40px;
+}
+.button3 {
+  background-color: white;
+  color: black;
+  border: 3px solid blue;
+  position: relative;
+  left:225px
+}
+
+.button3:hover {
+  background-color: blue;
+  color: white;
+}
+    </style>
+</head>
+
+<body>
+<br>
+
+
+
+      <center>
+        <img src="https://www.gizmochina.com/wp-content/uploads/2019/10/realme-logo.jpg" width="362" height="205">
+              </center>
+<br>
+      <center>
+
+        <h1><b><span>Realme Products</span></b></h1></center>
+
+
+<br>
+<main>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+
+      {% for Electrics in realme.all %}
+
+        <div class="col-md-4">
+
+
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{ Electrics.image.url }}" height="{{ Electrics.height }}" width="{{ Electrics.width }}">
+            <div class="card-body">
+              <h2><b>{{ Electrics.name }}</b></h2>
+              <p class="card-text">{{ Electrics.summary }}</p>
+              <h5>Price: {{ Electrics.price }}</h5>
+              <a href="/pay2/{{Electrics.name}}"><button class="button button3">Buy now</button></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
+{% endblock content %}

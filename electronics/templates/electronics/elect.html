@@ -1,0 +1,107 @@
+{% extends "electronics/index.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card a {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #106eea;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card a:hover {
+  opacity: 0.7;
+
+}
+h1 {
+  color: #106eea;
+  font-size: 40px;
+}
+</style>
+</head>
+<body>
+<center>
+    <br>
+<h1>Electronic Brands</h1>
+<p>Select which best suits for you</p>
+</center>
+<div class="row">
+  <div class="column">
+    <div class="card">
+        <img src="https://1000logos.net/wp-content/uploads/2017/06/Logo-Samsung-768x511.png" width="362" height="205">
+        <p>Samsung helps you discover a wide range of home electronics with cutting-edge technology including smartphones, tablets, TVs, home appliances and more.</p>
+        <a href="electric">Look for Products</a>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+
+        <img src="https://www.gizmochina.com/wp-content/uploads/2019/10/realme-logo.jpg" width="362" height="205">
+       <p>Realme is an emerging mobile phone brand which is committed to offering mobile phones with powerful performance, stylish design and sincere services.</p>
+  <a href="realme">Look for Products</a>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+
+        <img src="data:image/png;base64,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" width="362" height="205">
+       <p>Apple Inc. is an American multinational technology company headquartered in California, that designs, develops, and sells consumer electronics, computer software, and online services. </p>
+  <a href="apple">Look for Products</a>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+        <img src="data:image/png;base64,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" width="362" height="205">
+       <p>HP India's most complete online store for Laptops, PCs, Tablets, Monitors, Printers, Inks & Toners, Workstations, Accessories and more! One of the Best Company for Laptops and printers</p>
+  <a href="epson">Look for Products</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+{% endblock content %}

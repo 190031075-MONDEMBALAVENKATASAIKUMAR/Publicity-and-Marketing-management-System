@@ -1,0 +1,74 @@
+{% extends "Travel/index.html" %}
+{% block content %}
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Travel</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+ <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+       h1 {
+  font-size: 25px;
+}
+h2 {
+  color: #106eea;
+  font-size: 40px;
+}
+      }
+    </style>
+</head>
+
+<body>
+<br>
+<center><h2><b><span>Stationery</span></b></h2></center>
+<br>
+
+<main>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+
+      {% for Tra in stationery.all %}
+
+        <div class="col-md-4">
+
+
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{ Tra.image.url }}" height="225" width="100%">
+            <div class="card-body">
+              <h1><b>{{ Tra.name }}</b></h1>
+              <p class="card-text">{{ Tra.summary }}</p>
+              <b>Address: </b>
+              {{ Tra.where }}
+              <br>
+              <b>Timings: </b>
+              {{ Tra.timings }}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
+{% endblock content %}

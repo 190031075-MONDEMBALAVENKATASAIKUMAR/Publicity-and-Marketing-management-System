@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+</head>
+<body>
+<form class="form" method="POST" enctype="multipart/form-data" action="">
+    {% csrf_token %}
+    {{ service1.name }}
+    {{ service1.email }}
+    {{ service1.subject }}
+    {{ service1.message }}
+
+    <input type="submit" value="register" class="btn">
+</form>
+</body>
+</html>
