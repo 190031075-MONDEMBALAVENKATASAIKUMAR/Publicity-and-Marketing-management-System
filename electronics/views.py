@@ -120,5 +120,14 @@ def contacts(request):
         form = contactform
     return render(request=request, template_name="electronics/contact.html", context={"service1": form})
 
+@login_required(login_url='login')
 def yes(request):
     return render(request,'electronics/yes.html')
+
+@login_required(login_url='login')
+def thank(request):
+    return render(request,'electronics/Thankyou.html')
+
+@login_required(login_url='login')
+def otp(request):
+    return render(request,'electronics/otp.html')

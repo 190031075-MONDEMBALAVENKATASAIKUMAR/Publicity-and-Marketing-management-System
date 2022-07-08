@@ -19,6 +19,7 @@ import Realestate.views
 import Stationery.views
 import Travel.views
 import electronics.views
+import chartjs.views
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
@@ -38,10 +39,15 @@ urlpatterns = [
     path('real',Realestate.views.reals,name='real'),
     path('contact',electronics.views.contacts,name='contact'),
     path('yes',electronics.views.yes,name='yes'),
+    path('thank', electronics.views.thank, name='thank'),
     path('pay/<str:name>', electronics.views.pay, name="pay"),
     path('pay2/<str:name>', electronics.views.pay2, name="pay2"),
     path('pay3/<str:name>', electronics.views.pay3, name="pay3"),
     path('pay4/<str:name>', electronics.views.pay4, name="pay4"),
+    path('chart', chartjs.views.HomeView.as_view()),
+    # path('test-api', views.get_data),
+    path('api', chartjs.views.ChartData.as_view()),
+    path('otp',electronics.views.otp,name="otp")
 ]
 urlpatterns += static(settings.STATIC_URL,document_root = settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

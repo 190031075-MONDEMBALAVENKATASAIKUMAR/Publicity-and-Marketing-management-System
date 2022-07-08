@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'electronics',
     'Travel',
     'Stationery',
-    'Realestate'
+    'Realestate',
+    'rest_framework',
+    'chartjs'
 ]
 
 MIDDLEWARE = [
